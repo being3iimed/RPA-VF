@@ -1,0 +1,271 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Ajout_d_un_suivi_au_ticket_hote" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="IP_DnsHôte" Type="InArgument(x:String)" />
+    <x:Property Name="NomHôte" Type="InArgument(x:String)" />
+    <x:Property Name="StatutHôte" Type="InArgument(x:String)" />
+    <x:Property Name="DuréeEtatActuel" Type="InArgument(x:String)" />
+    <x:Property Name="ChangementDernierEtat" Type="InArgument(x:String)" />
+    <x:Property Name="StatutDétaillé" Type="InArgument(x:String)" />
+    <x:Property Name="MembreGroupeHôte" Type="InArgument(x:String)" />
+    <x:Property Name="DernierTicketTraité" Type="InArgument(x:String)" />
+    <x:Property Name="ID_TICKET" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>704.8,1952.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Follow_up" sap:VirtualizedContainerService.HintSize="635.2,1888" sap2010:WorkflowViewState.IdRef="Sequence_19">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="572.8,1776" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="selector" />
+        <Variable x:TypeArguments="x:String" Name="titre" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Search'" sap:VirtualizedContainerService.HintSize="510.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[ID_TICKET]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6f7978a4-6ff7-4fc5-8e39-cbfa9e66cf93" InformativeScreenshot="e7fef66ddbb335328f60d2ab33de242d" Selector="&lt;html app='chrome.exe' title='GLPI - Search' /&gt;&lt;webctrl tag='INPUT' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Enter '" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="Click_20" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b407095-900d-4d73-b3eb-fbbcc5e0a181" InformativeScreenshot="e8c6135b24dbb3a185101bdb937f500a" Selector="&lt;html app='chrome.exe' title='GLPI - Search' /&gt;&lt;webctrl id='globalsearchglass' tag='BUTTON' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Select ticket with ID_Ticket" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="Click_21" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="378364d8-ad8b-4e35-93d5-307eb98d6ab8" InformativeScreenshot="644194617c025b89418de6c6102130d7" Selector="&lt;html app='chrome.exe' title='GLPI - Search' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='3' tag='TD' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Actions" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="Click_22" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dbbf5724-a0c0-4e85-a183-97092bc392b6" InformativeScreenshot="457111b1654d5b798113cf285f2f701e" Selector="&lt;html app='chrome.exe' title='GLPI - Tickets - 1' /&gt;&lt;webctrl tag='BUTTON' type='button' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Add a new followup'" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="Click_23" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="02389761-b64e-452b-9e4f-1e9af4071ec1" InformativeScreenshot="4357ef947eb10c2e13955607554bc3ca" Selector="&lt;html app='chrome.exe' title='GLPI - Tickets - 1' /&gt;&lt;webctrl aaname='Add a new followup' class='dropdown-item' parentid='page' tag='A' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <If Condition="[MembreGroupeHôte.IndexOf(&quot;[&quot;)&gt;=0]" sap:VirtualizedContainerService.HintSize="510.4,354.4" sap2010:WorkflowViewState.IdRef="If_5">
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[MembreGroupehôte]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[MembreGroupeHôte.Substring( MembreGroupeHôte.IndexOf("[")+1,MembreGroupeHôte.IndexOf("]")-MembreGroupeHôte.IndexOf("[")-1)]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_17" />
+        </If.Else>
+      </If>
+      <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="510.4,90.4" sap2010:WorkflowViewState.IdRef="Delay_3" />
+      <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into Description" sap:VirtualizedContainerService.HintSize="510.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_8" SendWindowMessages="True" Text="[&quot;Hôte :&quot;+ NomHôte.Trim+&quot;[k(enter)]&quot;+&quot;@IP/DNS hôte:&quot;+ IP_DnsHôte.Substring(1).Trim+&quot;[k(enter)]&quot;+&quot;Statut Hôte: &quot;+ StatutHôte.Trim+&quot;[k(enter)]&quot;+&quot;Durée de l'état actuel :&quot;+ DuréeEtatActuel+&quot;[k(enter)]&quot;+&quot;Statut détaillé:&quot;+ StatutDétaillé+&quot;[k(enter)]&quot;+&quot;Membre du groupe d'hôtes: &quot;+ MembreGroupeHôte+&quot;[k(enter)]&quot;+&quot;Graphique détaillé : (CPU,MEMORY,DISK,Traffic) dernier 24 heures&quot;]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3bedd57f-ce23-4e1c-9dcc-ea28b7cc3bbb" InformativeScreenshot="5512398c89746ff1c668b77f5b21f4f6" Selector="&lt;html app='chrome.exe' title='GLPI - Tickets - 1' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='TEXTAREA' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Activités ignorées" sap:VirtualizedContainerService.HintSize="449.6,247.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Description'" sap:VirtualizedContainerService.HintSize="387.2,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_9" Text="[&quot;Hôte :&quot;+ NomHôte+&quot;[k(enter)]&quot;+&quot;@IP/DNS hôte:&quot;+ IP_DnsHôte.Substring(1)+&quot;[k(enter)]&quot;+&quot;Statut Hôte: &quot;+ StatutHôte+&quot;[k(enter)]&quot;+&quot;Durée de l'état actuel :&quot;+ DuréeEtatActuel+&quot;[k(enter)]&quot;+&quot;Statut détaillé:&quot;+ StatutDétaillé+&quot;[k(enter)]&quot;+&quot;Membre du groupe d'hôtes: &quot;+ MembreGroupeHôte+&quot;[k(enter)]&quot;+&quot;Graphique détaillé : (CPU,MEMORY,DISK,Traffic) dernier 24 heures&quot;]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7912be0f-8a84-4e2d-8c33-6afbd579959a" InformativeScreenshot="5512398c89746ff1c668b77f5b21f4f6" Selector="&lt;html app='chrome.exe' title='GLPI - Tickets - 1' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='TEXTAREA' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Add'" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="Click_24" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="22122b72-1ab4-4939-934d-42a4b8d5b985" InformativeScreenshot="0f889de069c5ef4dc1debf8717d7f5ee" Selector="&lt;html app='chrome.exe' title='GLPI - Tickets - 1' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='INPUT' type='submit' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+    </Sequence>
+  </Sequence>
+</Activity>

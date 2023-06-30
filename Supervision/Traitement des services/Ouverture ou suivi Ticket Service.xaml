@@ -1,0 +1,235 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Ouverture_ou_suivi_Ticket" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="statut_TICKET" Type="InArgument(x:String)" />
+    <x:Property Name="ID_TICKET" Type="InArgument(x:String)" />
+    <x:Property Name="NomService" Type="InArgument(x:String)" />
+    <x:Property Name="NumLigne" Type="InArgument(x:Int32)" />
+    <x:Property Name="GroupeHôteConfig" Type="InArgument(ui:GenericValue)" />
+  </x:Members>
+  <this:Ouverture_ou_suivi_Ticket.NomService>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Ouverture_ou_suivi_Ticket.NomService>
+  <sap:VirtualizedContainerService.HintSize>939.2,1506.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="949.6,1441.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="StatutHôte" />
+      <Variable x:TypeArguments="x:String" Name="DuréeEtatActuel" />
+      <Variable x:TypeArguments="x:String" Name="ChangementDerEtat" />
+      <Variable x:TypeArguments="x:String" Name="StatutDétaillé" />
+      <Variable x:TypeArguments="x:String" Name="MembreGroupeHôte" />
+      <Variable x:TypeArguments="x:String" Name="Collecteur" />
+      <Variable x:TypeArguments="x:String" Name="NomHôte" />
+      <Variable x:TypeArguments="x:String" Name="AliasHôte" />
+      <Variable x:TypeArguments="x:String" Name="IP_DnsHôte" />
+      <Variable x:TypeArguments="x:String" Name="IDTicketCrée" />
+      <Variable x:TypeArguments="x:String" Name="NomEntitéCompletGLPI" />
+      <Variable x:TypeArguments="x:String" Name="LieuGLPI" />
+      <Variable x:TypeArguments="x:String" Name="CatégorieGLPI" />
+      <Variable x:TypeArguments="x:String" Name="StatutService" />
+      <Variable x:TypeArguments="ui:Image" Name="GraphiqueDétaillé" />
+      <Variable x:TypeArguments="x:String" Name="intitulé" />
+      <Variable x:TypeArguments="x:String" Name="NumTicket" />
+      <Variable x:TypeArguments="x:String" Name="membeGroupeCategorie" />
+      <Variable x:TypeArguments="x:String" Name="membreGroupeLieu" />
+      <Variable x:TypeArguments="x:String" Name="DernierTicketTraité" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="887.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[MembreGroupeHôte]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[GroupeHôteConfig]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Recupération des données services workflow" sap:VirtualizedContainerService.HintSize="887.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_65" UnSafe="False" WorkflowFileName="Traitement des services\Recupération des données services.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="StatutService">[StatutService]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="StatutDétaillé">[StatutDétaillé]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="ChangementDerEtat">[ChangementDerEtat]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="IP_DnsHôte">[IP_DnsHôte]</OutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="NomHôte">[NomHôte]</InOutArgument>
+        <OutArgument x:TypeArguments="ui:Image" x:Key="GraphiqueDétaillé">[GraphiqueDétaillé]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="DuréeEtatActuel">[DuréeEtatActuel]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="AliasHôte">[AliasHôte]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="intitulé">[intitulé]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="lieuStatut">[LieuGLPI]</OutArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="NumLigne">[NumLigne]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="NumTicket">[NumTicket]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="MembreGroupeHôte">[MembreGroupeHôte]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="MembreGroupeCatégorie">[membeGroupeCategorie]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="MembreGroupeLieux">[membreGroupeLieu]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="NomService">[NomService]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <If Condition="[statut_TICKET=&quot;&quot;]" sap:VirtualizedContainerService.HintSize="887.2,264.8" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Then>
+        <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[statut_TICKET]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">test</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_15" />
+      </If.Else>
+    </If>
+    <If Condition="[statut_TICKET.Trim=&quot; Nouveau&quot; or statut_TICKET.Trim=&quot;En attente&quot; or statut_TICKET.Trim=&quot;En cours (attribué)&quot; or statut_TICKET.Trim=&quot;En cours (planifié)&quot; And ID_TICKET&lt;&gt;&quot;&quot;]" sap:VirtualizedContainerService.HintSize="887,622" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence sap2010:Annotation.AnnotationText="suivi !&#xA;" sap:VirtualizedContainerService.HintSize="421,321" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="ID_du_ticket_crée" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Ajout d'un suivi au ticket hote workflow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_55" UnSafe="False" WorkflowFileName="Traitement des services\Ajout d'un suivi au ticket service.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="Nomhôte">[NomHôte]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="IP_DnsHôte">[IP_DnsHôte]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="StatutService">[StatutService]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="NomService">[NomService]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="StatutDétaillé">[StatutDétaillé]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="MembreGroupeHôte">[MembreGroupeHôte]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="DuréeEtatActuel">[DuréeEtatActuel]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="DernierTicketTraité">[DernierTicketTraité]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="ChangementDerEtat">[ChangementDerEtat]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="ID_TICKET">[ID_TICKET]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <Assign sap:VirtualizedContainerService.HintSize="379,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[IDTicketCrée]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[ID_TICKET]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:Annotation.AnnotationText="Nouveau ticket!" sap:VirtualizedContainerService.HintSize="421,464" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Lire correspondance workflow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_67" UnSafe="False" WorkflowFileName="Lire correspondance.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="x:String" x:Key="LieuGLPI">[LieuGLPI]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="CatégorieGLPI">[CatégorieGLPI]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="MembreGroupeLieux">[membreGroupeLieu]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="MembreGroupeCatégorie">[membeGroupeCategorie]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="NomEntitéCompletGLPI">[NomEntitéCompletGLPI]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Création d'un ticket service workflow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_63" UnSafe="False" WorkflowFileName="Traitement des services\Création d'un ticket service.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:Image" x:Key="graphique_détaillé" />
+              <InArgument x:TypeArguments="x:String" x:Key="NomHôte">[NomHôte]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="IP_DnsHôte">[IP_DnsHôte]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="StatutService">[StatutService]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="StatutDetaille">[StatutDétaillé]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="NomService">[NomService]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="DuréeEtatActuel">[DuréeEtatActuel]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="ChangementDerEtat">[ChangementDerEtat]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="MembreGroupeHôte">[MembreGroupeHôte]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="NomEntitéCompletGLPI">[NomEntitéCompletGLPI]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="DernierTicketTraité">[DernierTicketTraité]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="AliasHôte">[AliasHôte]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="CatégorieGLPI">[CatégorieGLPI]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="LieuGLPI">[LieuGLPI]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="NumTicket">[NumTicket]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Récupérer l’ID du ticket crée workflow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_60" UnSafe="False" WorkflowFileName="Récupérer l'ID du ticket crée.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="x:String" x:Key="IDTicketCrée">[IDTicketCrée]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Acquitter l’alerte hote workflow" sap:VirtualizedContainerService.HintSize="887,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_61" UnSafe="False" WorkflowFileName="Traitement des services\Acquitter l'alerte service.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="ID_ticket_crée">[IDTicketCrée]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="NumLigne">[NumLigne.ToString]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>

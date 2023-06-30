@@ -1,0 +1,275 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Accessing_Centreon" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="837.6,424" sap2010:WorkflowViewState.IdRef="Accessing_Centreon_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Centreon" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="LoggedIn" />
+      <Variable x:TypeArguments="x:Boolean" Name="LoginError" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Centreon - IT &amp; Network Monitoring" sap:VirtualizedContainerService.HintSize="405.6,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="False" ScopeGuid="cc09b8c3-362c-44a6-86a3-00080942d7df" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Login Sequence" sap:VirtualizedContainerService.HintSize="572.8,2126.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Default="False" Name="Exist" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="510.4,24.8" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                <ui:UiElementExists DisplayName="Element Exists 'INPUT'" Exists="[Exist]" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0a38d4f0-212a-4288-87c5-85583721b79c" InformativeScreenshot="330d322af9ae11add31360cd20b60c2b" Selector="&lt;webctrl id='logintab1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='INPUT' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <If Condition="[Exist=True]" sap:VirtualizedContainerService.HintSize="510.4,1799.2" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="476.8,1436" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="cc09b8c3-362c-44a6-86a3-00080942d7df" Text="Stage" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://supervision.adactim.com:4443/centreon/" CvType="InputBox" DesignTimeRectangle="905, 450, 219, 35" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl id='logintab1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='logintab1' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='inputclassic' aaname='' /&gt;" Guid="0edcce7f-9fd5-4688-b0b9-4a0961eb910d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN8AAAAnCAYAAACPOJ1YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACWSURBVHhe7dOxCYAwAABB959Jwc1iZcDCMvnmDn6EPwaQMB9E5nzndUva0OszH7CW+SBiPoiYDyLmg4j5IGI+iJgPIuaDiPkgYj6ImA8i5oOI+SBiPoiYDyLmg4j5IGI+iJgPIuaDiPkgYj6ImA8i5oOI+SBiPoiYDyLmg4j5IGI+iJgPIr/zSVrfa84H7GU+iJgPEmM8KfrjkLAVew0AAAAASUVORK5CYII=" InformativeScreenshot="de5832fa5011828a0c639ca4802f0823.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvType="InputBox" DesignTimeRectangle="905, 492, 219, 35" ElementType="InputBoxPassword" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl id='logintab1' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='logintab1' tag='TABLE' /&gt;&lt;webctrl type='password' tag='INPUT' class='inputclassicPass' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN8AAAAnCAYAAACPOJ1YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACWSURBVHhe7dOxCYAwAABB959Jwc1iZcDCMvnmDn6EPwaQMB9E5nzndUva0OszH7CW+SBiPoiYDyLmg4j5IGI+iJgPIuaDiPkgYj6ImA8i5oOI+SBiPoiYDyLmg4j5IGI+iJgPIuaDiPkgYj6ImA8i5oOI+SBiPoiYDyLmg4j5IGI+iJgPIr/zSVrfa84H7GU+iJgPEmM8KfrjkLAVew0AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="cc09b8c3-362c-44a6-86a3-00080942d7df" Text="Adactim@2023**" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://supervision.adactim.com:4443/centreon/" CvElementArea="904, 491, 221, 36" CvTextArea="907, 499, 7, 20" CvTextArgument="I" CvType="InputBox" DesignTimeRectangle="905, 492, 219, 35" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl id='logintab1' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='logintab1' tag='TABLE' /&gt;&lt;webctrl type='password' tag='INPUT' class='inputclassicPass' aaname='' /&gt;" Guid="49636cfd-98e9-4d4f-9048-37c1dd84cbb6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN8AAAAnCAYAAACPOJ1YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEKSURBVHhe7d2xjYNAFEVRSiCkNlqgWAqhBjSrv9ohsLyWLDN+yTnSS4zTKzL+1IAI8UHIFd95nm3f97aua1uWpc3zbGY3rHqqrqqv6qy74qsHojMbt+qrOuuu+KrM+sO2be04jr9fgU9VT9VV9VWddVd8/a0nPLhfddXfft0VXz2oAWM8NiY++BLxQYj4IER8ECI+CHk7vmmafgd8RnwQIj4IER+EiA9CxAch4oMQ8UGI+CBEfBAiPggRH4SID0LEByHig5C34wPuIT4IER+EiA9CxAch/8bnc/EwzsvPxTuUAmNUTy8PpTgRZjZ21dfTE2GOY5qNWfVUXVVfT49jAt8lPggRH0S09gOsu0Br2fKu4AAAAABJRU5ErkJggg==" InformativeScreenshot="0aefb5dd9035217402e490d33ae41ef1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Connect'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cc09b8c3-362c-44a6-86a3-00080942d7df" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://supervision.adactim.com:4443/centreon/" CvElementArea="812, 539, 312, 36" CvTextArea="942, 549, 53, 12" CvTextArgument="Connect" CvType="Button" DesignTimeRectangle="814, 541, 310, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Connect'" FullSelectorArgument="&lt;webctrl id='logintab1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='logintab1' tag='TABLE' /&gt;&lt;webctrl type='submit' tag='INPUT' class='btc bt_info' aaname='Connect' check:text='Connect' /&gt;" Guid="8bd11984-4dd8-43ff-932e-4849e6355cae" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAToAAAAlCAYAAADStSWmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJlSURBVHhe7d2xSitBFIdxO9/Kl8rr2PoEcksRC2srbbQRLiik2ELSaDHmzO6ZPWdmEiIquCffH35F3M1yC/mYCJecJMYYCz5CxxgLvyZ0F6//09ndbTq9+ZdOri8BYBGkWdIuaVg9F7rV0333AQCwJNIyuxI6qWDvDQCwRPZkV0InR77ezQCwRNI0XQkdf5MDEIk0TVdC17sRAJZMR+gAhKUjdADC0hE6AGHpCB2AsHSEDn0vb9Nvhu4tnffu+1Oe00N6T1ePvWs4RjpCh8b5Rn4jfNhWw/v2Z389IoQOno7Qwcsnuf7pLQdw81xej/HT2fdMwRnsqXC+nt+3Waerj+nSdsPg//uhf3YdL3m+Wf43+Z89vNj7cax0hA5OHbNdxhBV8Sqvp+h8rNMqv74fozY9VyNWYpTjOscsXy/v1ev67PFZcxjta0508HSEDkYdkV3GkPlTUx0cf93GqwmZu78fKwlwfvaeEyehQ01H6GAcGLrHdRr2xeg7ocvP7k+e3b7XInTwdIQOzkEfXX89dLtjRejwFTpCB2/PR8M5Mm3Ifvaja/1sg4+u+AIdoUMjn+qqmOQ4bacBGl/P9/jX3wld+2x/vf14PZ9CCR08HaFD1xgbu/YU5e/ZFSZz74GhE2Ns59lren+ZeZa+z4YQx0tH6ACEpSN0AMLSEToAYekIHYCwdIQOQFg6QgcgLB2hAxCWroSOrzsEEEn36w75AmsAkXS/wFq+vr93MwAskTRNV0InWz3x32YALJ+0zM6FTiYVlCMff7MDsCTSLGmXPcnpmtAxxli0ETrGWPgROsZY8KX0CQJEVTP6Kp/xAAAAAElFTkSuQmCC" InformativeScreenshot="49f2e754937adfbcf8aed33025e62ccd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[LoggedIn]" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6679e30e-43d6-465d-9394-c07abfe84920" InformativeScreenshot="e9139e61bb6795a8ca93b7ee535bd7cb" Selector="&lt;webctrl class='wrap-right-user__ZtyW7' parentid='content' tag='DIV' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                      <If Condition="[LoggedIn=True]" sap:VirtualizedContainerService.HintSize="433.6,363.2" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Logged into Centreon successfully " />
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="Error while trying to login into GLPI check Username or Password" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[Exist]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Already Logged into Centreon" />
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJTSURBVDhPpY9dSJNRGMefmBV7330YNKdCZEP6YHNuVgRaYJqDKEYE3URgVwlFjVWLPrDeBc2FLG3TWXPuy3fmPtLFcspbZsIyIhOKujMyDfu4i8JukqdjO1A02S76wQPncP6//zkH8rGXL5dV9+u2nxhW1XdNKPRcspShR7mp6dlUWh/TdNb1az7ujFTiSUGFzvEidDwueu8YK7a3jZUV0mg2usDumj3RjfOGoUqsi2qwmq/Apntl2PZQQQqKsWuqBFuEtTPcYOEyJV7nvpW8e6EyfgAN/Aas7VPjrrgOTaMq7EwX4XVBiZ3PS9A2oow4U+WrqUXxuY5AuHsRwn4E3y3U9u1Hw93NWNOrSR9LrA85BMVkxzNy+wMlT42/8HWcgogPgfcQuQMh4EFR2L1YFW44ShO/aX+q3EGXFIQV4G/lIO5FCLkQ/O2ZiS0VuYI0lQPfQCOk0uTGKBEifyaWIkV3DtNUDrpntkDoyzREviN4ZxF65jITXSD7mbM0lQfXVCkE5l9A7BuR32Wm9xP50vw0RN/KaSoP9kk5BD88gjh5yVJBcBYL3NMoNg+9FFvuH2KMXXqp1too2do6wuqsDdT6B+7NKvDNDcDgDxS1vULGlEDWIiDbPI4SYzfKtDaUbbuBUt21BVZvradWNqKbr71s8wSyZ4aRMSeROTdCCm6jVH2ZyNZMiZb7Ka9oWUOVbFhz8jxjEb6yl9LIXnmC0oMh8gJ7Rq6yfZborh6HWq6AxpdHfDqxTmwRTOKLo2Gp0ZOSqbmgpMrWJNFfUNDI/wLwC0GuEUy0ekcRAAAAAElFTkSuQmCC" InformativeScreenshot="a80db85d2da24e9a9565fe12d2ef05e9.jpg" Selector="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;" Title="Nouvel onglet" Url="https://supervision.adactim.com:4443/centreon/" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="408.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="496,368" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[LoginError]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="433.6,134.4" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Centreon Login" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

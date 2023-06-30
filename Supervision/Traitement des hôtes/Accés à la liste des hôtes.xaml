@@ -1,0 +1,103 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Accès_à_la_liste_des_hotes" sap:VirtualizedContainerService.HintSize="704.8,895.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="this sequence to show all hosts neglecting their status (UP/DOWN/PENDING/UNREACHABLE)" DisplayName="hosts_list" sap:VirtualizedContainerService.HintSize="545.6,830.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Centreon - IT &amp; Network Monitoring" sap:VirtualizedContainerService.HintSize="483.2,687.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="40c45be6-a62c-411a-9728-121062d36985" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,470.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="40c45be6-a62c-411a-9728-121062d36985" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://supervision.adactim.com:4443/centreon/main.php?p=20202&amp;o=h_up&amp;search=" DesignTimeRectangle="1147, 147, 34, 30" DesignTimeScaleFactor="1.25" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span' isleaf='1' parentid='content' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='content' tag='SPAN' class='iconmoon__2c25A icon-hosts__z9H07' aaname='' /&gt;" Guid="b926ec68-15ed-4870-b122-2afe34b447c9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAiCAYAAAAzrKu4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEHSURBVFhHY1DWt/w/GPHQcZh9SuX/wup6uuLkSFQ3gDCGw9pOff5Pb3BnA6obQBi7w+5tQhGjHd70/86ow0jCZDus7f/UzTv/byQbr/nflo5qfkzfmv8b57RB+WQ7bM3/q19//v9BNn76f38Hqvn1B57+/3F1DZQ/msZIxcPGYV/f/L9z+z4d8Jv/P4aHw0bT2PBz2KAtYAdtlURrPOowUjGpDqMzIN5hj/Zj7TRQH+///5gkh42mMbIdFv8/GWsUEIsr/8f4oJoP7rfmxUP5ZDsMopF88Pn/sW7C5o+mMeLxsHHY68tYKmRa4Mv/XxHrMHCzBGsThnb46kpUN4AwhsMGB7b8DwDYLfW0QGjlBAAAAABJRU5ErkJggg==" InformativeScreenshot="b45ff801d621f6e9034b2042c15996d2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'All1'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="40c45be6-a62c-411a-9728-121062d36985" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://supervision.adactim.com:4443/centreon/main.php?p=20202&amp;o=h_up&amp;search=" DesignTimeRectangle="1143, 283, 204, 22" DesignTimeScaleFactor="1.25" FriendlyName="'All1'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;a&amp;gt;div' parentid='content' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='content' tag='DIV' class='' aaname='' check:innerText='All&amp;#xA;1' /&gt;" Guid="9103b393-7a63-40b2-b220-f5be834b1e4b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANAAAAAaCAYAAADG19KmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGcSURBVHhe7dcxSwJhHMfx3ksvoNmpN1BTq9Do0tImBDe6SKPDQeAQNDRZQ2iLg3CTHEg0CJGQuKggFcIdCL/u0iu1hDufzecrfOCee/64ffHv3v5BTgC2Q0CAAQICDBAQYICAAAMEBBggIMDAxoAOb7rSrKvro3/uaz3p9f7nfPsqvdTWZoAdcOxUVX8eKxi1VfrnfkNAJ1EUoYJpGIVx8veegLDryg29TKIGJj15rZ7eP7IEVGioP31SxX1S8NZQfv2egLDrHFcV53T+XG5nCyj/MFDQqUbPVfnTge4KazMEBJtkC+hM9UEo352fK51Q/cez1RkCgk0yBXThaRivb8k5XuNGns6XZwgINskSULE1Xqxvybt4jRur6SzNERBskj6gkpqj3/UtEa9xw1bp9x0BwSapA4oHteGz/AUEBJukDejSDxX47srAnButcdEvU2VxJiDYJF1AcSSf8sqrA4nv/0ZJXAQEm6QK6LorjTwVly5XOJ6Gs66u4mcCgk1S/wcCkAkBAQYICDBAQIABAgIMEBBggICAreX0BTxFXswg8IGcAAAAAElFTkSuQmCC" InformativeScreenshot="67abb36aa5f7e5c164a6caef22e2014f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJTSURBVDhPpY9dSJNRGMefmBV7330YNKdCZEP6YHNuVgRaYJqDKEYE3URgVwlFjVWLPrDeBc2FLG3TWXPuy3fmPtLFcspbZsIyIhOKujMyDfu4i8JukqdjO1A02S76wQPncP6//zkH8rGXL5dV9+u2nxhW1XdNKPRcspShR7mp6dlUWh/TdNb1az7ujFTiSUGFzvEidDwueu8YK7a3jZUV0mg2usDumj3RjfOGoUqsi2qwmq/Apntl2PZQQQqKsWuqBFuEtTPcYOEyJV7nvpW8e6EyfgAN/Aas7VPjrrgOTaMq7EwX4XVBiZ3PS9A2oow4U+WrqUXxuY5AuHsRwn4E3y3U9u1Hw93NWNOrSR9LrA85BMVkxzNy+wMlT42/8HWcgogPgfcQuQMh4EFR2L1YFW44ShO/aX+q3EGXFIQV4G/lIO5FCLkQ/O2ZiS0VuYI0lQPfQCOk0uTGKBEifyaWIkV3DtNUDrpntkDoyzREviN4ZxF65jITXSD7mbM0lQfXVCkE5l9A7BuR32Wm9xP50vw0RN/KaSoP9kk5BD88gjh5yVJBcBYL3NMoNg+9FFvuH2KMXXqp1too2do6wuqsDdT6B+7NKvDNDcDgDxS1vULGlEDWIiDbPI4SYzfKtDaUbbuBUt21BVZvradWNqKbr71s8wSyZ4aRMSeROTdCCm6jVH2ZyNZMiZb7Ka9oWUOVbFhz8jxjEb6yl9LIXnmC0oMh8gJ7Rq6yfZborh6HWq6AxpdHfDqxTmwRTOKLo2Gp0ZOSqbmgpMrWJNFfUNDI/wLwC0GuEUy0ekcRAAAAAElFTkSuQmCC" InformativeScreenshot="fc74b23d153776bd623951efb22d88a2.jpg" Selector="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;" Title="Centreon - IT &amp; Network Monitoring" Url="https://supervision.adactim.com:4443/centreon/main.php?p=20202&amp;o=h_up&amp;search=" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

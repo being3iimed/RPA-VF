@@ -1,0 +1,494 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Récupération_des_données_services" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="StatutService" Type="OutArgument(x:String)" />
+    <x:Property Name="StatutDétaillé" Type="OutArgument(x:String)" />
+    <x:Property Name="ChangementDerEtat" Type="OutArgument(x:String)" />
+    <x:Property Name="IP_DnsHôte" Type="OutArgument(x:String)" />
+    <x:Property Name="NomHôte" Type="InOutArgument(x:String)" />
+    <x:Property Name="GraphiqueDétaillé" Type="OutArgument(ui:Image)" />
+    <x:Property Name="DuréeEtatActuel" Type="OutArgument(x:String)" />
+    <x:Property Name="AliasHôte" Type="OutArgument(x:String)" />
+    <x:Property Name="intitulé" Type="OutArgument(x:String)" />
+    <x:Property Name="lieuStatut" Type="OutArgument(x:String)" />
+    <x:Property Name="NumLigne" Type="InArgument(x:Int32)" />
+    <x:Property Name="NumTicket" Type="InArgument(x:String)" />
+    <x:Property Name="MembreGroupeHôte" Type="InArgument(x:String)" />
+    <x:Property Name="MembreGroupeCatégorie" Type="OutArgument(x:String)" />
+    <x:Property Name="MembreGroupeLieux" Type="OutArgument(x:String)" />
+    <x:Property Name="NomService" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>722.4,4268.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="54">
+      <x:String>ActiproSoftware.Products.Shared</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
+      <AssemblyReference>ActiproSoftware.Shared.Wpf</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="732.8,4204" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="tab_Détails_des_statuts" />
+      <Variable x:TypeArguments="x:String" Name="texte3" />
+      <Variable x:TypeArguments="x:String" Name="texte4" />
+      <Variable x:TypeArguments="sd:DataTable" Name="tab_groupe_hote" />
+      <Variable x:TypeArguments="sd:DataTable" Name="tab_nom_service" />
+      <Variable x:TypeArguments="x:Int32" Name="position" />
+      <Variable x:TypeArguments="x:Boolean" Name="element" />
+      <Variable x:TypeArguments="x:Int32" Name="test1" />
+      <Variable x:TypeArguments="ui:Browser" Name="Url" />
+      <Variable x:TypeArguments="x:String" Name="NomServicee" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Service'" sap:VirtualizedContainerService.HintSize="670.4,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="537c064b-1271-483a-bd76-57cb733f7d34" InformativeScreenshot="67cf14a36ffe515bbcd15ad65b0f3fe7" Selector="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;&lt;webctrl id='main-content' tag='IFRAME' /&gt;&lt;webctrl parentid='forAjax' tag='TABLE' /&gt;&lt;webctrl id='svc-498-6059' tableRow='3' tag='A' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="670.4,2557.6" sap2010:WorkflowViewState.IdRef="Sequence_30">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Centreon  Page'" sap:VirtualizedContainerService.HintSize="608,878.4" sap2010:WorkflowViewState.IdRef="BrowserScope_12" InformativeScreenshot="1a45cbaded3f30bdce9c2c5950e6bee6" Selector="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,731.2" sap2010:WorkflowViewState.IdRef="Sequence_29">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Service HostName ip_dns Alias '" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_8">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4dcb1ded-8f37-43ef-9e47-198691883f26" InformativeScreenshot="a6cd38d65346693ab4bccdf0e8ed9855" Selector="&lt;webctrl id='main-content' tag='IFRAME' /&gt;&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='H3' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[intitulé]</OutArgument>
+                </ui:GetValue.Value>
+              </ui:GetValue>
+              <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_21">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[NomHôte]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[intitulé.Substring(1, intitulé.IndexOf("/")-1)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_20">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[IP_DnsHôte]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[intitulé.Substring( intitulé.IndexOf("["))]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_22">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[AliasHôte]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[intitulé.Substring(intitulé.IndexOf("/")+1,(intitulé.IndexOf("[")-intitulé.IndexOf("/")))]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text '" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_10">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e782552b-084f-4222-aeb4-ee7dd1eb51b0" InformativeScreenshot="86b903426620372e17e370e5107bbb02" Selector="&lt;webctrl id='main-content' tag='IFRAME' /&gt;&lt;webctrl tableRow='23' tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='2' tag='TD' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[MembreGroupeHôte]</OutArgument>
+                </ui:GetValue.Value>
+              </ui:GetValue>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Alert'" sap:VirtualizedContainerService.HintSize="608,107.2" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4ecc9193-29b2-4803-a8e6-270c6586b9f9" InformativeScreenshot="591e384c7e09300dc34fa960d9c87da7" Selector="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;&lt;webctrl aaname='2' parentid='content' tag='A' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Service name" sap:VirtualizedContainerService.HintSize="608,107.2" sap2010:WorkflowViewState.IdRef="GetValue_11">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="81a741cf-a997-40b5-913d-f79939ffc297" InformativeScreenshot="ecf062c99d985ec4f742f96a67db689d" Selector="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;&lt;webctrl id='main-content' tag='IFRAME' /&gt;&lt;webctrl parentid='forAjax' tag='TABLE' /&gt;&lt;webctrl id='svc-498-6059' tableRow='3' tag='A' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[NomServicee]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Service'" sap:VirtualizedContainerService.HintSize="608,107.2" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2cf656a1-f061-4ebc-97fa-4e90e4a86024" InformativeScreenshot="3b76563d6fba8f4dda3830a9294ba7bb" Selector="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;&lt;webctrl id='main-content' tag='IFRAME' /&gt;&lt;webctrl parentid='forAjax' tag='TABLE' /&gt;&lt;webctrl id='svc-498-6059' tableRow='3' tag='A' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="608,1085.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Centreon  Page'" sap:VirtualizedContainerService.HintSize="545.6,973.6" sap2010:WorkflowViewState.IdRef="BrowserScope_13" InformativeScreenshot="7120df0b96e286408a7293594a9e8071" Selector="&lt;html app='chrome.exe' title='Centreon - IT &amp;amp; Network Monitoring' /&gt;" UiBrowser="[Url]">
+          <ui:BrowserScope.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+              </ActivityAction.Argument>
+              <Sequence sap:VirtualizedContainerService.HintSize="512,826.4" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="Urll" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,714.4" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="ui:Image" Name="image" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[tab_Détails_des_statuts]" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_7" MaxNumberOfResults="0" SimulateClick="True">
+                    <ui:ExtractData.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="56ac7572-9071-4ae2-aaaa-9c2b6439e8cf" InformativeScreenshot="3af1ce9c6333e2e2c7feae60333fd79f" Selector="&lt;webctrl id='main-content' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl css-selector='body&amp;gt;section&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td' tableCol='1' tableRow='1' tag='TD' /&gt;" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:ExtractData.Target>
+                  </ui:ExtractData>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="387.2,133.6" sap2010:WorkflowViewState.IdRef="SendHotkey_35" Key="&quot; &quot;" KeyModifiers="None">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="82e9d2b7-9128-4143-9d4d-b9a275e6c12f">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'SVG'" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[image]">
+                    <ui:TakeScreenshot.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="af8ceb73-568a-4f95-bb97-8a0909fc7324" InformativeScreenshot="ef9fd56db4b9f057952f5500d2481734" Selector="&lt;webctrl id='main-content' tag='IFRAME' /&gt;&lt;webctrl tableRow='25' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='svg' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TakeScreenshot.Target>
+                  </ui:TakeScreenshot>
+                  <ui:SaveImage DisplayName="Save Image" FileName="C:\Users\Adactim\Desktop\RPA-ADACTIM-VF\RPA-ADACTIM-VF\image.png" sap:VirtualizedContainerService.HintSize="387.2,134.4" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[image]" />
+                </Sequence>
+              </Sequence>
+            </ActivityAction>
+          </ui:BrowserScope.Body>
+        </ui:BrowserScope>
+      </Sequence>
+    </Sequence>
+    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="670.4,1347.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="587.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[StatutService]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[tab_Détails_des_statuts.Rows(1).item(1).ToString]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="587.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[StatutDétaillé]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[tab_Détails_des_statuts.Rows(2).item(1).ToString]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="587.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_9">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[DuréeEtatActuel]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[tab_Détails_des_statuts.Rows(13).item(1).ToString]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="587.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_10">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ChangementDerEtat]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[tab_Détails_des_statuts.Rows(8).item(1).ToString]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <If Condition="[MembreGroupeHôte.Contains(&quot;]&quot;)]" sap:VirtualizedContainerService.HintSize="587.2,748.8" sap2010:WorkflowViewState.IdRef="If_2">
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="553.6,565.6" sap2010:WorkflowViewState.IdRef="Sequence_34">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[MembreGroupeHôte.IndexOf(&quot;/&quot;)&lt;MembreGroupeHôte.IndexOf(&quot;[&quot;)]" sap:VirtualizedContainerService.HintSize="510.4,354.4" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_30">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[MembreGroupeLieux]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[MembreGroupeHôte.Substring( MembreGroupeHôte.IndexOf("-")+2,(MembreGroupeHôte.IndexOf("/")- MembreGroupeHôte.IndexOf("-")-1))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="304,352.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[MembreGroupeHôte]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[MembreGroupeHôte.Remove(0, MembreGroupeHôte.IndexOf("-")+1)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_31">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[MembreGroupeLieux]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[MembreGroupeHôte.Substring( MembreGroupeHôte.IndexOf("-"),MembreGroupeHôte.IndexOf("/")- MembreGroupeHôte.IndexOf("-")+1)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[MembreGroupeLieux]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[MembreGroupeLieux.Remove(0,2)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+            <Assign sap:VirtualizedContainerService.HintSize="510.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_29">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[MembreGroupeCatégorie]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[MembreGroupeHôte.Substring( MembreGroupeHôte.IndexOf("["),MembreGroupeHôte.IndexOf("]")+1-MembreGroupeHôte.IndexOf("["))]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap:VirtualizedContainerService.HintSize="304,252.8" sap2010:WorkflowViewState.IdRef="Sequence_38">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[MembreGroupeCatégorie]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">1-Autre</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_32">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[MembreGroupeLieux]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[MembreGroupeHôte.Substring( MembreGroupeHôte.IndexOf("-")+2,(MembreGroupeHôte.IndexOf("/")- MembreGroupeHôte.IndexOf("-")-1))]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+  </Sequence>
+</Activity>

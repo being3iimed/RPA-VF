@@ -1,0 +1,145 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Récupérer_l_ID_du_ticket_crée" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="IDTicketCrée" Type="OutArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>838.4,996.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="608,932" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="text" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="545.6,551.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: GLPI - Tickets" sap:VirtualizedContainerService.HintSize="483.2,439.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c0b13195-3297-47e1-8aaf-b7cac473ad7e" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,222.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:GetValue ContinueOnError="True" DisplayName="Get Id" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="594d7fb9-7c27-441f-8570-08659ff5f815" InformativeScreenshot="2f13d3a79298d137b887bb67c71fbb76" Selector="&lt;html app='chrome.exe' title='GLPI - Search' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='TD' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[text]</OutArgument>
+                </ui:GetValue.Value>
+              </ui:GetValue>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPTSURBVFhHtZdbqBdVFIePd00lr+UdShPFKx5UQgtTFAyNCEFf8koSpYYi3fChsHoRn9QkQU3EXqIUu1iKhaRCUCgovkZEUBFe0iDC2/fNWeOZmbP/f//l8Qcfs/aetdfas2fvPXua/quam5vDKsv6oEMdaravq2qjCGTATtAZusJQeAKWwBp4EzbDu/AWvApjoGOEubtwDqtFNoYuMBAWwFY4BVfhVgO8BN0iXG3hVEqObeK+MB8OwT9QDX4DrL8Gf8Ev8AMchcPwLdjpLhE2LRyqyfvAIjgH1aTyL1yEE/A6zITe0Twp7odVUfEGtu/Yd3YQUolvwq+wHUZFs5KoD6tB5Q24mvxx+AlSyR1uh3ZK1iBEOaz/obyxVxgPvsNayT+CvgX/rG27yMBwBFLJ5RsYGr5Zm3YTAV3Xz0AqsfwGS8M3a1NUqi6lNn55Bdce8DWkkoszvUfmHKIcVquocw49AI7mgKC0MiiHVRCV/cFllUp+HT4IvzYBKPeCYTAO5sDzsAHcEeVFmAE9o0lZ3LDXEyCVXC7BxnDPRLk7mHQ6LAN3xi/gO3DjcaV8FRyLsq+4a4RoFZXudrMhlVz+gNXhnomym9STsArWwjpwz38bdoF7yGfgTihO7h3QP0K0iko7MAtSyeVPeDl8M2qJe47MZNgCxQ44Ojsh2YF850sll7/hnfDN2lRVraf8Apg474Sv4RXoFS5lccMhNVGqA/JJuDYk/F+DL8Hkn8OnMAk6hEuLqMivLkO/dqnkcgEmFttUlddzHQu+bzvgCDgRV0D2Oeaa+ZVEpRvRQkglFz+328K9TZC8zNVDiocSH8Ynd/a/Af0yh3rCqTfYYxP6xat24ndYGe5Z0pxc2E/DAXDWu7G5DwyO2yXfO8oruToZncEOdzV5jh+q5GSizmW5G3xqH8Sl+XDcTifPVbyJ7Z7giSbVAbkMPuVz0D3auIxd/8dhPyyGB7OACDusOio6YU+FPZDqQM7P4IZjYof8NLj+J0WYkqgPq46KTtgeQD3puoRSZ8Ei3r8C58EJuA/s2PvgCfmhCHt34RxWiygPh3mwCVxaHsdSnaiFO+nYCNeYaJDqiEv1KfgYfoQPwSH3nduxk+DcOQtn4HvwM74XsoNMw6JBqQPYLtHl4EF0PUwDv/XuoINgBDwKj8HouI6ER2AwdI5Q9YVjNbF/Ps/Ce2AH3E5NGh6Nq26b6k3KJp4Lq8FDhk9YWvuUw7oHVYNQNvEU8F/P4fNpS79UlMNqJxkQ/O/zWDYEuoHf9dLPJOWw2lkGBrdhDyadojrTfUva1NR0G7A3UXmcOb2iAAAAAElFTkSuQmCC" InformativeScreenshot="4e85fb1fd3a14772e92c08854dcd4fd3.jpg" Selector="&lt;html app='chrome.exe' title='GLPI - Tickets' /&gt;" Title="GLPI - Tickets" Url="http://localhost/front/ticket.php" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+    <Assign sap:VirtualizedContainerService.HintSize="545.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Object">[IDTicketCrée]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[text.Substring(text.IndexOf("D")+1,text.IndexOf("(")-text.IndexOf("D")-1)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="GLPI Standard page" sap:VirtualizedContainerService.HintSize="545.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0dce3c31-2425-40be-93bd-8fcab5e2c5b1" InformativeScreenshot="153bf0a1857e566c5e886153bd638dc3" Selector="&lt;html app='chrome.exe' title='GLPI - Standard interface' /&gt;&lt;webctrl tag='A' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+  </Sequence>
+</Activity>
